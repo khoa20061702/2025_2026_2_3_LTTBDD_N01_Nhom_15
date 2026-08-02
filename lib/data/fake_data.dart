@@ -36,3 +36,4 @@ List<Topic> topicList = [
       Word(english: 'map', vietnamese: 'ban do'),
     ],
   ),
+];
