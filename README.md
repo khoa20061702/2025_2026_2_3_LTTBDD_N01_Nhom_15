@@ -1,4 +1,4 @@
-# App Học Từ Vựng Tiếng Anh
+# APP HỌC TỪ VỰNG TIẾNG ANH
 
 ## Thông tin môn học
 - Học phần: Lập trình cho thiết bị di động
