@@ -1,17 +1,30 @@
-# vocab_learning_app
+# App Học Từ Vựng Tiếng Anh
 
-A new Flutter project.
+## Thông tin môn học
+- Học phần: Lập trình cho thiết bị di động
+- Mã HP: CSE702027-2-3-25(N01)
+- Đề tài: App học từ vựng tiếng Anh
+- Khóa: K18
+- Năm: 2026
+- Giảng viên hướng dẫn: Nguyễn Xuân Quế
 
-## Getting Started
+## Nhóm 15
+- Phạm Công Vinh
+- Vũ Phan Hoàng Sơn
+- Nguyễn Đăng Khoa
 
-This project is a starting point for a Flutter application.
+## Giới thiệu
+Ứng dụng học từ vựng tiếng Anh theo chủ đề, hỗ trợ 2 chế độ ôn tập là Flashcard và Quiz. Ứng dụng hỗ trợ song ngữ Anh - Việt.
 
-A few resources to get you started if this is your first Flutter project:
+## Chức năng chính
+- Đăng nhập / Đăng ký
+- Danh sách chủ đề từ vựng (dữ liệu ảo)
+- Xem danh sách từ vựng theo từng chủ đề
+- Học từ vựng bằng Flashcard
+- Kiểm tra từ vựng bằng Quiz trắc nghiệm
+- Đánh dấu từ vựng yêu thích
+- Đổi ngôn ngữ giao diện Anh / Việt
+- Trang thông tin nhóm
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Công nghệ sử dụng
+- Flutter
