@@ -6,10 +6,12 @@ class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});
 
   @override
-  State<FavoritesScreen> createState() => _FavoritesScreenState();
+  State<FavoritesScreen> createState() =>
+      _FavoritesScreenState();
 }
 
-class _FavoritesScreenState extends State<FavoritesScreen> {
+class _FavoritesScreenState
+    extends State<FavoritesScreen> {
   final _favManager = FavoritesManager();
 
   @override
@@ -17,16 +19,27 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     final favorites = _favManager.favorites;
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+          CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+          padding: const EdgeInsets.fromLTRB(
+            20,
+            20,
+            20,
+            10,
+          ),
           child: Row(
             children: [
-              const Icon(Icons.favorite, color: Colors.redAccent, size: 28),
+              const Icon(
+                Icons.favorite,
+                color: Colors.redAccent,
+                size: 28,
+              ),
               const SizedBox(width: 10),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment:
+                    CrossAxisAlignment.start,
                 children: [
                   Text(
                     T.get('favorites'),
@@ -38,7 +51,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                   ),
                   Text(
                     '${favorites.length} từ đã lưu',
-                    style: const TextStyle(fontSize: 14, color: Colors.black54),
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.black54,
+                    ),
                   ),
                 ],
               ),
@@ -49,84 +65,140 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           child: favorites.isEmpty
               ? Center(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment:
+                        MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.favorite_border,
-                          size: 80, color: Colors.grey.shade400),
+                      Icon(
+                        Icons.favorite_border,
+                        size: 80,
+                        color:
+                            Colors.grey.shade400,
+                      ),
                       const SizedBox(height: 16),
                       Text(
                         'Chưa có từ yêu thích nào',
                         style: TextStyle(
-                            fontSize: 18, color: Colors.grey.shade600),
+                          fontSize: 18,
+                          color: Colors
+                              .grey
+                              .shade600,
+                        ),
                       ),
                       const SizedBox(height: 8),
                       Text(
                         'Nhấn ❤️ khi học từ vựng để lưu lại',
                         style: TextStyle(
-                            fontSize: 14, color: Colors.grey.shade500),
+                          fontSize: 14,
+                          color: Colors
+                              .grey
+                              .shade500,
+                        ),
                       ),
                     ],
                   ),
                 )
               : ListView.builder(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
+                      ),
                   itemCount: favorites.length,
                   itemBuilder: (context, index) {
                     final word = favorites[index];
                     return Card(
                       elevation: 3,
-                      margin: const EdgeInsets.only(bottom: 14),
+                      margin:
+                          const EdgeInsets.only(
+                            bottom: 14,
+                          ),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius:
+                            BorderRadius.circular(
+                              15,
+                            ),
                       ),
                       child: Row(
                         children: [
                           // Image
-                          if (word.imageUrl != null)
+                          if (word.imageUrl !=
+                              null)
                             ClipRRect(
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(15),
-                                bottomLeft: Radius.circular(15),
+                              borderRadius:
+                                  const BorderRadius.only(
+                                    topLeft:
+                                        Radius.circular(
+                                          15,
+                                        ),
+                                    bottomLeft:
+                                        Radius.circular(
+                                          15,
+                                        ),
+                                  ),
+                              child: _buildImage(
+                                word.imageUrl!,
                               ),
-                              child: _buildImage(word.imageUrl!),
                             )
                           else
                             Container(
                               width: 90,
                               height: 90,
                               decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(15),
-                                  bottomLeft: Radius.circular(15),
-                                ),
+                                color: Colors
+                                    .grey
+                                    .shade300,
+                                borderRadius:
+                                    const BorderRadius.only(
+                                      topLeft:
+                                          Radius.circular(
+                                            15,
+                                          ),
+                                      bottomLeft:
+                                          Radius.circular(
+                                            15,
+                                          ),
+                                    ),
                               ),
-                              child: const Icon(Icons.image,
-                                  size: 40, color: Colors.grey),
+                              child: const Icon(
+                                Icons.image,
+                                size: 40,
+                                color:
+                                    Colors.grey,
+                              ),
                             ),
 
-                          const SizedBox(width: 14),
+                          const SizedBox(
+                            width: 14,
+                          ),
 
                           // Text
                           Expanded(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment:
+                                  CrossAxisAlignment
+                                      .start,
                               children: [
                                 Text(
                                   word.english,
                                   style: const TextStyle(
                                     fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFF2575FC),
+                                    fontWeight:
+                                        FontWeight
+                                            .bold,
+                                    color: Color(
+                                      0xFF2575FC,
+                                    ),
                                   ),
                                 ),
-                                const SizedBox(height: 4),
+                                const SizedBox(
+                                  height: 4,
+                                ),
                                 Text(
                                   word.vietnamese,
                                   style: const TextStyle(
                                     fontSize: 15,
-                                    color: Colors.black87,
+                                    color: Colors
+                                        .black87,
                                   ),
                                 ),
                               ],
@@ -135,22 +207,42 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
 
                           // Remove button
                           IconButton(
-                            icon: const Icon(Icons.favorite,
-                                color: Colors.redAccent, size: 26),
+                            icon: const Icon(
+                              Icons.favorite,
+                              color: Colors
+                                  .redAccent,
+                              size: 26,
+                            ),
                             onPressed: () {
                               setState(() {
-                                _favManager.remove(word);
+                                _favManager
+                                    .remove(word);
                               });
-                              ScaffoldMessenger.of(context).showSnackBar(
+                              ScaffoldMessenger.of(
+                                context,
+                              ).showSnackBar(
                                 SnackBar(
                                   content: Text(
-                                      '❌ Đã bỏ yêu thích "${word.english}"'),
-                                  duration: const Duration(seconds: 1),
-                                  behavior: SnackBarBehavior.floating,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
+                                    'Đã bỏ yêu thích "${word.english}"',
                                   ),
-                                  backgroundColor: Colors.grey.shade700,
+                                  duration:
+                                      const Duration(
+                                        seconds:
+                                            1,
+                                      ),
+                                  behavior:
+                                      SnackBarBehavior
+                                          .floating,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(
+                                          10,
+                                        ),
+                                  ),
+                                  backgroundColor:
+                                      Colors
+                                          .grey
+                                          .shade700,
                                 ),
                               );
                             },
@@ -172,7 +264,8 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         width: 90,
         height: 90,
         fit: BoxFit.cover,
-        errorBuilder: (c, e, s) => _buildFallbackIcon(),
+        errorBuilder: (c, e, s) =>
+            _buildFallbackIcon(),
       );
     } else {
       return Image.network(
@@ -180,7 +273,8 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         width: 90,
         height: 90,
         fit: BoxFit.cover,
-        errorBuilder: (c, e, s) => _buildFallbackIcon(),
+        errorBuilder: (c, e, s) =>
+            _buildFallbackIcon(),
       );
     }
   }
@@ -189,8 +283,14 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     return Container(
       width: 90,
       height: 90,
-      decoration: BoxDecoration(color: Colors.grey.shade300),
-      child: const Icon(Icons.image_not_supported, size: 35, color: Colors.grey),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade300,
+      ),
+      child: const Icon(
+        Icons.image_not_supported,
+        size: 35,
+        color: Colors.grey,
+      ),
     );
   }
 }

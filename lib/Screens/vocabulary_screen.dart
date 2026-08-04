@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/topic.dart';
 import '../core/favorites_manager.dart';
+import 'flashcard_screen.dart';
 
 class VocabularyScreen extends StatefulWidget {
   final Topic topic;
@@ -21,6 +22,20 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
         title: Text(widget.topic.title),
         backgroundColor: const Color(0xFF6A11CB),
         foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            tooltip: 'Học Flashcard',
+            icon: const Icon(Icons.style),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => FlashcardScreen(topic: widget.topic),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
