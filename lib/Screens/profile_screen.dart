@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/app_state.dart';
 import 'about_screen.dart';
+import 'login_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -46,6 +47,21 @@ class ProfileScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (_) => const AboutScreen()),
+            );
+          },
+        ),
+        const Divider(),
+        ListTile(
+          leading: const Icon(Icons.logout, color: Colors.red),
+          title: Text(
+            T.get('logout'),
+            style: const TextStyle(color: Colors.red),
+          ),
+          onTap: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (_) => const LoginScreen()),
+              (route) => false,
             );
           },
         ),

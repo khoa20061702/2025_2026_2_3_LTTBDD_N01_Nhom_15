@@ -102,6 +102,10 @@ class T {
         'en': 'Registration successful! Welcome!',
         'vi': 'Đăng ký thành công! Chào mừng bạn!',
       },
+      'logout': {
+        'en': 'Logout',
+        'vi': 'Đăng xuất',
+      },
     };
 
     return translations[key]?[isVi ? 'vi' : 'en'] ?? key;
