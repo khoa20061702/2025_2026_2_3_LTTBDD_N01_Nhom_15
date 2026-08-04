@@ -26,7 +26,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.white.withOpacity(0.12),
+        fillColor: Colors.white.withValues(alpha: 0.12),
         labelText: label,
         labelStyle: const TextStyle(color: Colors.white70),
         prefixIcon: Icon(icon, color: Colors.white70),
@@ -85,7 +85,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   padding: const EdgeInsets.all(18),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -111,7 +111,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   T.get('register_subtitle'),
                   style: TextStyle(
                     fontSize: 15,
-                    color: Colors.white.withOpacity(0.8),
+                    color: Colors.white.withValues(alpha: 0.8),
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -167,6 +167,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 55,
                   child: ElevatedButton(
                     onPressed: () {
+                      final navigator = Navigator.of(context);
                       // Show success then go to main
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -179,8 +180,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       );
                       Future.delayed(const Duration(seconds: 1), () {
-                        Navigator.pushReplacement(
-                          context,
+                        navigator.pushReplacement(
                           MaterialPageRoute(
                             builder: (_) => const MainScreen(),
                           ),
