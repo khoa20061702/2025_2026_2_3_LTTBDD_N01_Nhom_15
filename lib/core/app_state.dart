@@ -78,6 +78,30 @@ class T {
         'en': 'Don\'t have an account? Sign Up',
         'vi': 'Chưa có tài khoản? Đăng ký',
       },
+      'register': {
+        'en': 'Register',
+        'vi': 'Đăng ký',
+      },
+      'register_subtitle': {
+        'en': 'Create your account to start learning',
+        'vi': 'Tạo tài khoản để bắt đầu học ngay',
+      },
+      'full_name': {
+        'en': 'Full Name',
+        'vi': 'Họ và tên',
+      },
+      'confirm_password': {
+        'en': 'Confirm Password',
+        'vi': 'Xác nhận mật khẩu',
+      },
+      'already_have_account': {
+        'en': 'Already have an account? Login',
+        'vi': 'Đã có tài khoản? Đăng nhập',
+      },
+      'register_success': {
+        'en': 'Registration successful! Welcome!',
+        'vi': 'Đăng ký thành công! Chào mừng bạn!',
+      },
     };
 
     return translations[key]?[isVi ? 'vi' : 'en'] ?? key;
