@@ -13,7 +13,8 @@ class AboutScreen extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment:
+              CrossAxisAlignment.center,
           children: [
             const Icon(
               Icons.groups,
@@ -30,29 +31,46 @@ class AboutScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
-            _buildMemberCard('Nguyễn Đăng Khoa', 'assets/images/ava_khoa.jpg'),
+            _buildMemberCard(
+              'Nguyễn Đăng Khoa - 24100476',
+              'assets/images/ava_khoa.jpg',
+            ),
             const SizedBox(height: 16),
-            _buildMemberCard('Vũ Phan Hoàng Sơn', 'assets/images/ava_son.jpg'),
+            _buildMemberCard(
+              'Vũ Phan Hoàng Sơn-24108247',
+              'assets/images/ava_son.jpg',
+            ),
             const SizedBox(height: 16),
-            _buildMemberCard('Phạm Công Vinh', 'assets/images/ava_vinh.jpg'),
+            _buildMemberCard(
+              'Phạm Công Vinh-241004297',
+              'assets/images/ava_vinh.jpg',
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildMemberCard(String name, String avatarPath) {
+  Widget _buildMemberCard(
+    String name,
+    String avatarPath,
+  ) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
           children: [
             CircleAvatar(
               radius: 40,
-              backgroundImage: AssetImage(avatarPath),
-              onBackgroundImageError: (exception, stackTrace) {},
+              backgroundImage: AssetImage(
+                avatarPath,
+              ),
+              onBackgroundImageError:
+                  (exception, stackTrace) {},
             ),
             const SizedBox(width: 20),
             Expanded(
