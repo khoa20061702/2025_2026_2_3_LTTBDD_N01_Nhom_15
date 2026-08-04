@@ -106,6 +106,22 @@ class T {
         'en': 'Logout',
         'vi': 'Đăng xuất',
       },
+      'quiz': {
+        'en': 'Quiz',
+        'vi': 'Trắc nghiệm',
+      },
+      'score': {
+        'en': 'Score',
+        'vi': 'Điểm',
+      },
+      'finish': {
+        'en': 'Finish',
+        'vi': 'Hoàn thành',
+      },
+      'question': {
+        'en': 'Question',
+        'vi': 'Câu hỏi',
+      },
     };
 
     return translations[key]?[isVi ? 'vi' : 'en'] ?? key;

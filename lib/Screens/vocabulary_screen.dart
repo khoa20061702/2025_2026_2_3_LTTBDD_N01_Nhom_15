@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../models/topic.dart';
 import '../core/favorites_manager.dart';
 import 'flashcard_screen.dart';
+import 'quiz_screen.dart';
+import '../core/app_state.dart';
 
 class VocabularyScreen extends StatefulWidget {
   final Topic topic;
@@ -31,6 +33,18 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (_) => FlashcardScreen(topic: widget.topic),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            tooltip: T.get('quiz'),
+            icon: const Icon(Icons.quiz),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => QuizScreen(topic: widget.topic),
                 ),
               );
             },
