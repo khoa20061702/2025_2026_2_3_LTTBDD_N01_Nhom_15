@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'favorites_screen.dart';
 import 'home_screen.dart';
 import 'profile_screen.dart';
+import '../core/app_state.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -21,8 +22,7 @@ class  _MainScreenState extends State <MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        title: const Text("vocab learning"),
-
+        title: Text(T.get('app_title')),
       ),
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -32,18 +32,18 @@ class  _MainScreenState extends State <MainScreen> {
             _currentIndex = index;
           });
         },
-        items:const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: const Icon(Icons.home),
+            label: T.get('home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorites',
+            icon: const Icon(Icons.favorite),
+            label: T.get('favorites'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: const Icon(Icons.person),
+            label: T.get('profile'),
           ),
         ]
       )
