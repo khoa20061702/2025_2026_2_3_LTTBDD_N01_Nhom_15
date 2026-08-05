@@ -38,20 +38,30 @@ class _LoginScreenState
                 mainAxisAlignment:
                     MainAxisAlignment.center,
                 children: [
-                  // Logo or Icon
+                  // Logo ảnh
                   Container(
-                    padding: const EdgeInsets.all(
-                      20,
-                    ),
                     decoration: BoxDecoration(
-                      color: Colors.white
-                          .withValues(alpha: 0.2),
                       shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFFE8631A).withValues(alpha: 0.5),
+                          blurRadius: 30,
+                          spreadRadius: 5,
+                        ),
+                        BoxShadow(
+                          color: const Color(0xFF2575FC).withValues(alpha: 0.4),
+                          blurRadius: 50,
+                          spreadRadius: 2,
+                        ),
+                      ],
                     ),
-                    child: const Icon(
-                      Icons.school,
-                      size: 80,
-                      color: Colors.white,
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/logo.png',
+                        width: 120,
+                        height: 120,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 30),
